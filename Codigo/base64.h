@@ -1,6 +1,6 @@
-
 #include <stdio.h>
 #include <stdlib.h>
+
 
 /*
 ** Translation Table as described in RFC1113
@@ -11,6 +11,11 @@ static const char cb64[]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01
 ** Translation Table to decode (created by author)
 */
 static const char cd64[]="|$$$}rstuvwxyz{$$$$$$$>?@ABCDEFGHIJKLMNOPQRSTUVW$$$$$$XYZ[\\]^_`abcdefghijklmnopq";
+
+
+
+#define B64_DEF_LINE_SIZE   72
+#define B64_MIN_LINE_SIZE    4
 
 /*
 ** returnable errors
@@ -233,139 +238,3 @@ static int b64( char opt, char *infilename, char *outfilename, int linesize )
     return( retcode );
 }
 
-/*
-** showuse
-**
-** display usage information, help, version info
-*/
-static void showuse( int morehelp )
-{
-    {
-        printf( "\n" );
-        printf( "  b64      (Base64 Encode/Decode)    Bob Trower 2001/08/03 \n" );
-        printf( "           (C) Copr Bob Trower 1986-2015     Version 0.94R \n" );
-        printf( "  Usage:   b64 -option [-l<num>] [<FileIn> [<FileOut>]]\n" );
-        printf( "  Purpose: This program is a simple utility that implements\n" );
-        printf( "           Base64 Content-Transfer-Encoding (RFC1113).\n" );
-    }
-    if( morehelp == 0 ) {
-        printf( "           Use -h option for additional help.\n" );
-    }
-    else {
-        printf( "  Options: -e  encode to Base64   -h  This help text.\n" );
-        printf( "           -d  decode from Base64 -?  This help text.\n" );
-        printf( "           -t  Show test instructions. Under Windows the\n" );
-        printf( "               following command line will pipe the help\n" );
-        printf( "               text to run a test:\n" );
-        printf( "                   b64 -t | cmd\n" );
-        printf( "  Note:    -l  use to change line size (from 72 characters)\n" );
-        printf( "  Returns: 0 = success.  Non-zero is an error code.\n" );
-        printf( "  ErrCode: 1 = Bad Syntax, 2 = File Open, 3 = File I/O\n" );
-        printf( "  Example: b64 -e binfile b64file     <- Encode to b64\n" );
-        printf( "           b64 -d b64file binfile     <- Decode from b64\n" );
-        printf( "           b64 -e -l40 infile outfile <- Line Length of 40\n" );
-        printf( "  Note:    Will act as a filter, but this should only be\n" );
-        printf( "           used on text files due to translations made by\n" );
-        printf( "           operating systems.\n" );
-        printf( "  Source:  Source code and latest releases can be found at:\n" );
-        printf( "           http://base64.sourceforge.net\n" );
-        printf( "  Release: 0.94.00, Thu Oct 29 01:36:00 2015, ANSI-SOURCE C\n" );
-    }
-}
-
-void dotest(void)
-{
-    printf(":See source code at sourceforge.net for\n");
-    printf(":Unit test information.\n");
-    printf(":\n");
-    printf(":Under Windows the following batch file will\n");
-    printf(":do a quick reality check:\n");
-    printf("\n");
-    printf("@echo off&cls\n");
-    printf("copy /b /y b64.exe b64.bin 1>>nul 2>>nul\n");
-    printf("b64 -e b64.bin b64.b64\n");
-    printf("b64 -d b64.b64 b64.bin.exe\n");
-    printf("fc /b b64.exe b64.bin.exe\n");
-    printf(":/\\ Should say no differences enountered /\\\n");
-    printf("\n");
-}
-
-#define B64_DEF_LINE_SIZE   72
-#define B64_MIN_LINE_SIZE    4
-
-#define THIS_OPT(ac, av) ((char)(ac > 1 ? av[1][0] == '-' ? av[1][1] : 0 : 0))
-
-/*
-** main
-**
-** parse and validate arguments and call b64 engine or help
-*/
-/*
-int main( int argc, char **argv )
-{
-    char opt = (char) 0;
-    int retcode = 0;
-    int linesize = B64_DEF_LINE_SIZE;
-    char *infilename = NULL, *outfilename = NULL;
-
-    while( THIS_OPT( argc, argv ) != (char) 0 ) {
-        switch( THIS_OPT(argc, argv) ) {
-            case 'l':
-                    linesize = atoi( &(argv[1][2]) );
-                    if( linesize < B64_MIN_LINE_SIZE ) {
-                        linesize = B64_MIN_LINE_SIZE;
-                        printf( "%s\n", b64_message( B64_LINE_SIZE_TO_MIN ) );
-                    }
-                    break;
-            case '?':
-            case 'h':
-                    opt = 'h';
-                    break;
-            case 'e':
-            case 'd':
-                    opt = THIS_OPT(argc, argv);
-                    break;
-            case 't':
-                    opt = THIS_OPT(argc, argv);
-                    break;
-             default:
-                    opt = (char) 0;
-                    break;
-        }
-        argv++;
-        argc--;
-    }
-    if( argc > 3 ) {
-        printf( "%s\n", b64_message( B64_SYNTAX_TOOMANYARGS ) );
-        opt = (char) 0;
-    }
-    switch( opt ) {
-        case 'e':
-        case 'd':
-            infilename = argc > 1 ? argv[1] : NULL;
-            outfilename = argc > 2 ? argv[2] : NULL;
-            retcode = b64( opt, infilename, outfilename, linesize );
-            break;
-        case 0:
-			if( argv[1] == NULL ) {
-				showuse( 0 );
-			}
-			else {
-				retcode = B64_SYNTAX_ERROR;
-			}
-			break;
-        case 'h':
-            showuse( (int) opt );
-            break;
-        case 't':
-            dotest();
-            break;
-
-    }
-    if( retcode != 0 ) {
-        printf( "%s\n", b64_message( retcode ) );
-    }
-
-    return( retcode );
-}
-*/

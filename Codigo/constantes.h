@@ -20,9 +20,9 @@
 #define MSG_NO_FILE "El nombre del archivo a convertir es inexistente.\n"
 #define MSG_ERR_ARGS "Los argumentos no han sido llamados de forma correcta.\n"
 #define MSG_HELP  "La invocacion debe ser de la forma: [-d] -i NOMBRE_ARCHIVO_ORIGEN  -o NOMBRE_ARCHIVO_SALIDA\n   \t-h\tVer Ayuda\n\t-V\tVersion Actual\n\t-d\tModo Decodificador\n \t-i\tNombre archivo de entrada\n\t-o\tNombre archivo de salida\n\n" 
-
+#define MSG_OK "Operacion Completada con Exito\n"
 //Modos
-#define MODO_CODIFICADOR 'c'
+#define MODO_CODIFICADOR 'e'
 #define MODO_DECODIFICADOR 'd'
 #define MODO_AYUDA 'h'
 #define MODO_VERSION 'V'
