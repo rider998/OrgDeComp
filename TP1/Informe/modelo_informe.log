@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.23)  24 APR 2016 12:49
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.4.23)  25 APR 2016 15:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -176,7 +176,7 @@ Package epstopdf Info: Source file: <fig001.eps>
 (epstopdf)                    date: 2016-04-13 23:59:30
 (epstopdf)                    size: 6106 bytes
 (epstopdf)             Output file: <fig001-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-04-13 23:59:30
+(epstopdf)                    date: 2016-04-25 14:54:34
 (epstopdf)                    size: 5758 bytes
 (epstopdf)             Command: <repstopdf --outfile=fig001-eps-converted-to.pd
 f fig001.eps>
@@ -199,193 +199,176 @@ te for-ma: ``xxxxxxx...xxxxDCBA''.
  []
 
 [2]
-Overfull \hbox (37.88882pt too wide) in paragraph at lines 101--102
-\OT1/cmr/m/n/10 men-te, una uti-li-zan-do el string ``xxxxxxx...xxxxDCBA'' y ot
-ra el ``xxxxxxx...xxxxABCD''
- []
+Package epstopdf Info: Source file: <1.eps>
+(epstopdf)                    date: 2016-04-25 15:05:07
+(epstopdf)                    size: 2169791 bytes
+(epstopdf)             Output file: <1-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-04-25 15:07:58
+(epstopdf)                    size: 184913 bytes
+(epstopdf)             Command: <repstopdf --outfile=1-eps-converted-to.pdf 1.e
+ps>
+(epstopdf)             \includegraphics on input line 101.
+Package epstopdf Info: Output file is already uptodate.
+ <1-eps-converted-to.pdf, id=21, 747.79375pt x 479.7925pt>
+File: 1-eps-converted-to.pdf Graphic file (type pdf)
 
-[3] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+<use 1-eps-converted-to.pdf>
+Package pdftex.def Info: 1-eps-converted-to.pdf used on input line 101.
+(pdftex.def)             Requested size: 345.0pt x 221.35878pt.
+ [3 <./1-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <2.eps>
+(epstopdf)                    date: 2016-04-25 15:15:19
+(epstopdf)                    size: 2362611 bytes
+(epstopdf)             Output file: <2-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-04-25 15:15:31
+(epstopdf)                    size: 85202 bytes
+(epstopdf)             Command: <repstopdf --outfile=2-eps-converted-to.pdf 2.e
+ps>
+(epstopdf)             \includegraphics on input line 132.
+Package epstopdf Info: Output file is already uptodate.
 
- []
+<2-eps-converted-to.pdf, id=28, 770.88pt x 506.89375pt>
+File: 2-eps-converted-to.pdf Graphic file (type pdf)
 
-[6]
-Package epstopdf Info: Source file: <Tabla1.eps>
-(epstopdf)                    date: 2016-04-13 23:59:30
-(epstopdf)                    size: 2036535 bytes
-(epstopdf)             Output file: <Tabla1-eps-converted-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=Tabla1-eps-converted-to.pd
-f Tabla1.eps>
-(epstopdf)             \includegraphics on input line 266.
-runsystem(repstopdf --outfile=Tabla1-eps-converted-to.pdf Tabla1.eps)...execute
-d safely (allowed).
+<use 2-eps-converted-to.pdf>
+Package pdftex.def Info: 2-eps-converted-to.pdf used on input line 132.
+(pdftex.def)             Requested size: 345.0pt x 226.85481pt.
+ [4 <./2-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <3.eps>
+(epstopdf)                    date: 2016-04-25 15:17:30
+(epstopdf)                    size: 2187219 bytes
+(epstopdf)             Output file: <3-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-04-25 15:18:21
+(epstopdf)                    size: 159298 bytes
+(epstopdf)             Command: <repstopdf --outfile=3-eps-converted-to.pdf 3.e
+ps>
+(epstopdf)             \includegraphics on input line 158.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <Tabla1-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-04-24 12:49:43
-(epstopdf)                    size: 211027 bytes.
- <Tabla1-eps-converted-to.pdf, id=34, 580.1675pt x 327.2225pt>
-File: Tabla1-eps-converted-to.pdf Graphic file (type pdf)
+<3-eps-converted-to.pdf, id=35, 753.81625pt x 479.7925pt>
+File: 3-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Tabla1-eps-converted-to.pdf>
-Package pdftex.def Info: Tabla1-eps-converted-to.pdf used on input line 266.
-(pdftex.def)             Requested size: 345.0pt x 194.58745pt.
+<use 3-eps-converted-to.pdf>
+Package pdftex.def Info: 3-eps-converted-to.pdf used on input line 158.
+(pdftex.def)             Requested size: 345.0pt x 219.5871pt.
+ [5 <./3-eps-converted-to.pdf>] [6]
+Package epstopdf Info: Source file: <4.eps>
+(epstopdf)                    date: 2016-04-25 15:20:05
+(epstopdf)                    size: 2068853 bytes
+(epstopdf)             Output file: <4-eps-converted-to.pdf>
+(epstopdf)                    date: 2016-04-25 15:21:04
+(epstopdf)                    size: 92387 bytes
+(epstopdf)             Command: <repstopdf --outfile=4-eps-converted-to.pdf 4.e
+ps>
+(epstopdf)             \includegraphics on input line 252.
+Package epstopdf Info: Output file is already uptodate.
+
+<4-eps-converted-to.pdf, id=46, 702.625pt x 486.81876pt>
+File: 4-eps-converted-to.pdf Graphic file (type pdf)
+
+<use 4-eps-converted-to.pdf>
+Package pdftex.def Info: 4-eps-converted-to.pdf used on input line 252.
+(pdftex.def)             Requested size: 345.0pt x 239.04097pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package epstopdf Info: Source file: <Tabla2.eps>
-(epstopdf)                    date: 2016-04-13 23:59:30
-(epstopdf)                    size: 1736648 bytes
-(epstopdf)             Output file: <Tabla2-eps-converted-to.pdf>
-(epstopdf)             Command: <repstopdf --outfile=Tabla2-eps-converted-to.pd
-f Tabla2.eps>
-(epstopdf)             \includegraphics on input line 280.
-runsystem(repstopdf --outfile=Tabla2-eps-converted-to.pdf Tabla2.eps)...execute
-d safely (allowed).
+[7] [8 <./4-eps-converted-to.pdf>]
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 335--335
+[]\OT1/cmtt/m/n/10 char buf[80+4+1]; // 80 bytes del buffer, 4 de la variable "
+cookie"[] 
+ []
 
-Package epstopdf Info: Result file: <Tabla2-eps-converted-to.pdf>
-(epstopdf)                    date: 2016-04-24 12:49:45
-(epstopdf)                    size: 201210 bytes.
-<Tabla2-eps-converted-to.pdf, id=35, 554.07pt x 291.0875pt>
-File: Tabla2-eps-converted-to.pdf Graphic file (type pdf)
 
-<use Tabla2-eps-converted-to.pdf>
-Package pdftex.def Info: Tabla2-eps-converted-to.pdf used on input line 280.
-(pdftex.def)             Requested size: 345.0pt x 181.24966pt.
- [7] [8 <./Tabla1-eps-converted-to.pdf> <./Tabla2-eps-converted-to.pdf>]
-Overfull \hbox (106.49606pt too wide) in paragraph at lines 334--334
-[]            \OT1/cmtt/m/n/10 iError = b64(cModo,argv[iIndexARG+2],argv[iIndex
-ARG+4],B64_DEF_LINE_SIZE);[] 
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 335--335
+[]\OT1/cmtt/m/n/10 //cerramos la salida de la pipe, porque de aqu^^S^^P s^^Solo
+ queremos leer[] 
+ []
+
+
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 335--335
+[]\OT1/cmtt/m/n/10 //cerramos la entrada de la pipe, porque de aqui solo querem
+os escribir[] 
+ []
+
+
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 335--335
+[]\OT1/cmtt/m/n/10 //todo lo que escribamos en stdout, lo escribiremos en la pi
+pe de escritura[] 
+ []
+
+
+Overfull \hbox (85.49625pt too wide) in paragraph at lines 335--335
+[]\OT1/cmtt/m/n/10 //cerramos la pipe de escritura, ya que ahora se hace refere
+ncia a ella por stdout[] 
  []
 
 [9]
-Overfull \hbox (321.74419pt too wide) in paragraph at lines 420--420
-[]\OT1/cmtt/m/n/10 Esta funcion tiene como objetivo validar los parametros con 
-las cuales se invoca el programa y determinar la respuesta adecuada[] 
+Overfull \hbox (6.74693pt too wide) in paragraph at lines 396--396
+[]\OT1/cmtt/m/n/10 char buf[80+4+1]; // 80 bytes del buffer, 4 de la variable "
+cookie"[] 
  []
 
 
-Overfull \hbox (137.99579pt too wide) in paragraph at lines 420--420
-[]\OT1/cmtt/m/n/10 if(strcmp(argv[2],CONST_ARG_INPUT_NAME) == 0 && strcmp(argv[
-4],CONST_ARG_OUTPUT_NAME) == 0){[] 
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 396--396
+[]\OT1/cmtt/m/n/10 //cerramos la salida de la pipe, porque de aqu^^S^^P s^^Solo
+ queremos leer[] 
  []
 
 
-Overfull \hbox (137.99579pt too wide) in paragraph at lines 420--420
-[]\OT1/cmtt/m/n/10 if(strcmp(argv[1],CONST_ARG_INPUT_NAME) == 0 && strcmp(argv[
-3],CONST_ARG_OUTPUT_NAME) == 0){[] 
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 396--396
+[]\OT1/cmtt/m/n/10 //cerramos la entrada de la pipe, porque de aqui solo querem
+os escribir[] 
  []
 
 [10]
-Overfull \hbox (137.99579pt too wide) in paragraph at lines 619--619
-[]\OT1/cmtt/m/n/10 static const char cb64[]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefgh
-ijklmnopqrstuvwxyz0123456789+/";[] 
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 396--396
+[]\OT1/cmtt/m/n/10 //todo lo que escribamos en stdout, lo escribiremos en la pi
+pe de escritura[] 
  []
 
 
-Overfull \hbox (227.24501pt too wide) in paragraph at lines 619--619
-[]\OT1/cmtt/m/n/10 static const char cd64[]="|$$$}rstuvwxyz{$$$$$$$>?@ABCDEFGHI
-JKLMNOPQRSTUVW$$$$$$XYZ[\\]^_`abcdefghijklmnopq";[] 
+Overfull \hbox (85.49625pt too wide) in paragraph at lines 396--396
+[]\OT1/cmtt/m/n/10 //cerramos la pipe de escritura, ya que ahora se hace refere
+ncia a ella por stdout[] 
+ []
+
+
+Overfull \hbox (1.49698pt too wide) in paragraph at lines 455--455
+[]\OT1/cmtt/m/n/10 //cerramos la salida de la pipe, porque de aqu^^S^^P s^^Solo
+ queremos leer[] 
  []
 
 [11]
-Overfull \hbox (27.74675pt too wide) in paragraph at lines 619--619
-[]            \OT1/cmtt/m/n/10 "b64:003:File I/O Error -- Note: output file not
- removed.",[] 
+Overfull \hbox (27.74675pt too wide) in paragraph at lines 455--455
+[]\OT1/cmtt/m/n/10 //cerramos la entrada de la pipe, porque de aqui solo querem
+os escribir[] 
  []
 
 
-Overfull \hbox (153.74565pt too wide) in paragraph at lines 619--619
-[]\OT1/cmtt/m/n/10 #define b64_message( ec ) ((ec > 0 && ec < B64_MAX_MESSAGES 
-) ? b64_msgs[ ec ] : b64_msgs[ 0 ])[] 
+Overfull \hbox (48.74657pt too wide) in paragraph at lines 455--455
+[]\OT1/cmtt/m/n/10 //todo lo que escribamos en stdout, lo escribiremos en la pi
+pe de escritura[] 
  []
 
 
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 619--619
-[]\OT1/cmtt/m/n/10 static void encodeblock( unsigned char *in, unsigned char *o
-ut, int len )[] 
+Overfull \hbox (85.49625pt too wide) in paragraph at lines 455--455
+[]\OT1/cmtt/m/n/10 //cerramos la pipe de escritura, ya que ahora se hace refere
+ncia a ella por stdout[] 
  []
 
-
-Overfull \hbox (127.49588pt too wide) in paragraph at lines 619--619
-[]    \OT1/cmtt/m/n/10 out[1] = (unsigned char) cb64[ (int)(((in[0] & 0x03) << 
-4) | ((in[1] & 0xf0) >> 4)) ];[] 
- []
-
-
-Overfull \hbox (221.99506pt too wide) in paragraph at lines 619--619
-[]    \OT1/cmtt/m/n/10 out[2] = (unsigned char) (len > 1 ? cb64[ (int)(((in[1] 
-& 0x0f) << 2) | ((in[2] & 0xc0) >> 6)) ] : '=');[] 
- []
-
-
-Overfull \hbox (48.74657pt too wide) in paragraph at lines 619--619
-[]    \OT1/cmtt/m/n/10 out[3] = (unsigned char) (len > 2 ? cb64[ (int)(in[2] & 
-0x3f) ] : '=');[] 
- []
-
-[12]
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 619--619
-[]        \OT1/cmtt/m/n/10 for( len = 0, i = 0; i < 4 && feof( infile ) == 0; i
-++ ) {[] 
- []
-
-
-Overfull \hbox (17.24684pt too wide) in paragraph at lines 619--619
-[]                \OT1/cmtt/m/n/10 v = ((v < 43 || v > 122) ? 0 : (int) cd64[ v
- - 43 ]);[] 
- []
-
-[13]
-Overfull \hbox (59.24648pt too wide) in paragraph at lines 619--619
-[]\OT1/cmtt/m/n/10 static int b64( char opt, char *infilename, char *outfilenam
-e, int linesize )[] 
- []
-
-
-Overfull \hbox (1.49698pt too wide) in paragraph at lines 619--619
-[]            \OT1/cmtt/m/n/10 if (ferror( infile ) != 0 || ferror( outfile ) !
-= 0) {[] 
- []
-
-[14]
-Overfull \hbox (11.99689pt too wide) in paragraph at lines 654--654
-[]\OT1/cmtt/m/n/10 #define MSG_NO_ARGS "El programa ha sido invocado sin argume
-ntos.\n"[] 
- []
-
-
-Overfull \hbox (38.24666pt too wide) in paragraph at lines 654--654
-[]\OT1/cmtt/m/n/10 #define MSG_NO_FILE "El nombre del archivo a convertir es in
-existente.\n"[] 
- []
-
-
-Overfull \hbox (69.74638pt too wide) in paragraph at lines 654--654
-[]\OT1/cmtt/m/n/10 #define MSG_ERR_ARGS "Los argumentos no han sido llamados de
- forma correcta.\n"[] 
- []
-
-
-Overfull \hbox (962.2386pt too wide) in paragraph at lines 654--654
-[]\OT1/cmtt/m/n/10 #define MSG_HELP  "La invocacion debe ser de la forma: [-d] 
--i NOMBRE_ARCHIVO_ORIGEN  -o NOMBRE_ARCHIVO_SALIDA\n   \t-h\tVer Ayuda\n\t-V\tV
-ersion Actual\n\t-d\tModo Decodificador\n \t-i\tNombre archivo de entrada\n\t-o
-\tNombre archivo de salida\n\n"[] 
- []
-
-[15] [16] (./modelo_informe.aux
+[12] (./modelo_informe.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 2287 strings out of 494925
- 31626 string characters out of 6178544
- 96396 words of memory out of 5000000
- 5497 multiletter control sequences out of 15000+600000
+ 2297 strings out of 494925
+ 31793 string characters out of 6178544
+ 96412 words of memory out of 5000000
+ 5505 multiletter control sequences out of 15000+600000
  9501 words of font info for 34 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 38i,7n,26p,679b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,7n,26p,679b,259s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texl
@@ -395,10 +378,10 @@ fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmtt12.pfb>
-Output written on modelo_informe.pdf (16 pages, 553610 bytes).
+Output written on modelo_informe.pdf (12 pages, 646672 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
