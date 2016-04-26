@@ -1,0 +1,74 @@
+(gdb) disas main
+Dump of assembler code for function main:
+0x400b50 <main>:        lui     gp,0xfc0
+0x400b54 <main+4>:      addiu   gp,gp,29920
+0x400b58 <main+8>:      addu    gp,gp,t9
+0x400b5c <main+12>:     addiu   sp,sp,-40
+0x400b60 <main+16>:     sw      gp,16(sp)
+0x400b64 <main+20>:     sw      ra,32(sp)
+0x400b68 <main+24>:     sw      s8,28(sp)
+0x400b6c <main+28>:     sw      gp,24(sp)
+0x400b70 <main+32>:     move    s8,sp
+0x400b74 <main+36>:     lw      t9,-32688(gp)
+0x400b78 <main+40>:     nop
+0x400b7c <main+44>:     jalr    t9
+0x400b80 <main+48>:     nop
+0x400b84 <main+52>:     lw      gp,16(s8)
+0x400b88 <main+56>:     move    v0,zero
+0x400b8c <main+60>:     move    sp,s8
+0x400b90 <main+64>:     lw      ra,32(sp)
+0x400b94 <main+68>:     lw      s8,28(sp)
+0x400b98 <main+72>:     jr      ra
+0x400b9c <main+76>:     addiu   sp,sp,40
+End of assembler dump.
+(gdb)
+
+(gdb) disas stack4
+Dump of assembler code for function stack4:
+0x400ba0 <stack4>:      lui     gp,0xfc0
+0x400ba4 <stack4+4>:    addiu   gp,gp,29840
+0x400ba8 <stack4+8>:    addu    gp,gp,t9
+0x400bac <stack4+12>:   addiu   sp,sp,-128
+0x400bb0 <stack4+16>:   sw      gp,16(sp)
+0x400bb4 <stack4+20>:   sw      ra,120(sp)
+0x400bb8 <stack4+24>:   sw      s8,116(sp)
+0x400bbc <stack4+28>:   sw      gp,112(sp)
+0x400bc0 <stack4+32>:   move    s8,sp
+0x400bc4 <stack4+36>:   addiu   v0,s8,104
+0x400bc8 <stack4+40>:   lw      a0,-32744(gp)
+0x400bcc <stack4+44>:   nop
+0x400bd0 <stack4+48>:   addiu   a0,a0,3680
+0x400bd4 <stack4+52>:   addiu   a1,s8,24
+0x400bd8 <stack4+56>:   move    a2,v0
+0x400bdc <stack4+60>:   lw      t9,-32664(gp)
+0x400be0 <stack4+64>:   nop
+0x400be4 <stack4+68>:   jalr    t9
+0x400be8 <stack4+72>:   nop
+0x400bec <stack4+76>:   lw      gp,16(s8)
+0x400bf0 <stack4+80>:   addiu   a0,s8,24
+0x400bf4 <stack4+84>:   lw      t9,-32672(gp)
+---Type <return> to continue, or q <return> to quit---return
+0x400bf8 <stack4+88>:   nop
+0x400bfc <stack4+92>:   jalr    t9
+0x400c00 <stack4+96>:   nop
+0x400c04 <stack4+100>:  lw      gp,16(s8)
+0x400c08 <stack4+104>:  nop
+0x400c0c <stack4+108>:  lw      a0,-32744(gp)
+0x400c10 <stack4+112>:  nop
+0x400c14 <stack4+116>:  addiu   a0,a0,3704
+0x400c18 <stack4+120>:  lw      a1,104(s8)
+0x400c1c <stack4+124>:  lw      t9,-32664(gp)
+0x400c20 <stack4+128>:  nop
+0x400c24 <stack4+132>:  jalr    t9
+0x400c28 <stack4+136>:  nop
+0x400c2c <stack4+140>:  lw      gp,16(s8)
+0x400c30 <stack4+144>:  lw      v1,104(s8)
+0x400c34 <stack4+148>:  lui     v0,0xd
+0x400c38 <stack4+152>:  ori     v0,v0,0xa00
+0x400c3c <stack4+156>:  bne     v1,v0,0x400c64 <stack4+196>
+0x400c40 <stack4+160>:  nop
+0x400c44 <stack4+164>:  lw      a0,-32744(gp)
+0x400c48 <stack4+168>:  nop
+0x400c4c <stack4+172>:  addiu   a0,a0,3720
+0x400c50 <stack4+176>:  lw      t9,-32664(gp)
+
